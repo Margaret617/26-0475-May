@@ -30,7 +30,7 @@ const Contact = () => {
     if (!email || email.trim() === '') {
       return 'Email is required';
     }
-    // Comprehensive email validation
+    // Comprehensive email validation - removed unnecessary escapes
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       return 'Please enter a valid email address (e.g., name@domain.com)';
@@ -48,7 +48,8 @@ const Contact = () => {
     if (!phone || phone.trim() === '') {
       return 'Phone number is required';
     }
-    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+    // Fixed regex - removed unnecessary escapes
+    const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$/;
     if (!phoneRegex.test(phone.replace(/\s/g, ''))) {
       return 'Please enter a valid phone number (e.g., 123-456-7890)';
     }
@@ -69,7 +70,6 @@ const Contact = () => {
       [name]: value
     });
 
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors({
         ...errors,
@@ -110,7 +110,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validate all fields
     const newErrors = {
       name: validateName(formData.name),
       email: validateEmail(formData.email),
@@ -118,7 +117,6 @@ const Contact = () => {
       gender: validateGender(formData.gender)
     };
 
-    // Filter out empty errors
     const filteredErrors = {};
     Object.keys(newErrors).forEach(key => {
       if (newErrors[key]) {
@@ -128,12 +126,10 @@ const Contact = () => {
 
     setErrors(filteredErrors);
 
-    // If no errors, submit the form
     if (Object.keys(filteredErrors).length === 0) {
       console.log('Form Data:', formData);
       setSubmitted(true);
       
-      // Reset form after 3 seconds
       setTimeout(() => {
         setFormData({
           name: '',
@@ -167,7 +163,7 @@ const Contact = () => {
             </div>
             <div className="contact-item">
               <span className="contact-label">Location</span>
-              <span className="contact-value">Kenya, Nairobi</span>
+              <span className="contact-value">Monterey, California</span>
             </div>
           </div>
         </div>
