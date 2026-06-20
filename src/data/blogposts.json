@@ -1,0 +1,61 @@
+[
+  {
+    "id": 1,
+    "title": "Monterey Car Week 2024: A Collector's Perspective",
+    "date": "2024-08-25",
+    "author": "The Collector",
+    "category": "Events",
+    "excerpt": "Reflections on the most prestigious automotive gathering in the world.",
+    "content": "Monterey Car Week is more than just an event it's a pilgrimage for automotive enthusiasts from around the globe. This year's gathering was particularly special, with record-breaking auctions and breathtaking displays of automotive artistry.\n\nThe Pebble Beach Concours d'Elegance showcased some of the most exquisite examples of automotive design ever created. From pre-war classics to modern hypercars, the diversity and quality of vehicles on display was simply outstanding.\n\nOne of the highlights was witnessing a 1962 Ferrari 250 GTO take Best in Class a reminder that true automotive excellence never goes out of style. The attention to detail in these machines is what sets them apart from ordinary cars.",
+    "image": "https://i.pinimg.com/736x/10/54/35/1054359c6d3e7434938a66e9d0490bf2.jpg",
+    "tags": ["Events", "Concours", "Monterey"]
+  },
+  {
+    "id": 2,
+    "title": "Restoration Journey: The Ferrari 250 GTO",
+    "date": "2024-07-15",
+    "author": "The Collector",
+    "category": "Restoration",
+    "excerpt": "Documenting the meticulous restoration of a true automotive icon.",
+    "content": "When I acquired this 1962 Ferrari 250 GTO, I knew it was going to be a journey. The car had a rich racing history but needed extensive restoration to return it to its former glory.\n\nThe process began with a complete disassembly, documenting every single part and its condition. The chassis was stripped to bare metal, revealing the original factory markings a treasure trove of authenticity.\n\nThe engine rebuild was entrusted to Ferrari Classiche in Maranello, Italy. Every component was either restored to original specification or replaced with period-correct parts. The engine now produces a symphony of power that only a Colombo V12 can deliver.\n\nAfter 18 months of painstaking work, the car emerged transformed. The Rosso Corsa paint gleams like new, the leather interior smells of heritage, and the mechanicals are as precise as the day it left the factory.\n\nThis restoration taught me that preserving automotive history is about more than just fixing broken parts—it's about honoring the vision of the original craftsmen who created these masterpieces",
+    "image": "https://i.pinimg.com/736x/03/a8/8e/03a88e862f86720b7d2458fa121325c2.jpg",
+    "tags": ["Restoration", "Ferrari", "Classic"]
+  },
+  {
+    "id": 3,
+    "title": "Driving the Pacific Coast Highway in the DB5",
+    "date": "2024-06-01",
+    "author": "The Collector",
+    "category": "Road Trip",
+    "excerpt": "A 500-mile journey along California's most scenic route in the Aston Martin DB5.",
+    "content": "There's something magical about driving a classic grand tourer along the Pacific Coast Highway. The Aston Martin DB5, with its elegant lines and intoxicating exhaust note, is the perfect companion for this journey.\n\nThe route from San Francisco to Los Angeles offers some of the most breathtaking coastal views in the world. With the top down, the salty sea breeze mixing with the smell of vintage leather, every mile feels like a scene from a movie.\n\nThe DB5 performed flawlessly, its straight-six engine humming contentedly at cruising speed. The torque delivery is so smooth and linear a testament to the engineering brilliance of the 1960s.\n\nI stopped at various lookout points, each offering a different perspective of the rugged coastline. The car attracted attention everywhere people recognize the iconic Bond car instantly.\n\nThis trip reaffirmed why we collect these cars. They're not just investments or museum pieces they're meant to be driven and enjoyed. The connection between man, machine, and road is something that modern cars, with all their electronic aids, simply cannot replicate.",
+    "image": "https://i.pinimg.com/736x/47/7f/b6/477fb6f2a2aada29464f734fb0155015.jpg",
+    "tags": ["Road Trip", "Aston Martin", "California"]
+  },
+  {
+    "id": 4,
+    "title": "The Art of Collecting: Building a Curated Garage",
+    "date": "2024-05-10",
+    "author": "The Collector",
+    "category": "Collecting",
+    "excerpt": "Insights into the philosophy behind building a collection that tells a story.",
+    "content": "Collecting cars is about more than just accumulating wealth in metal form. It's about curating a collection that tells a story—your story.\n\nWhen I started collecting, I made the mistake of buying cars that were 'good investments' rather than cars I truly connected with. Over time, I learned that the best collections are built around passion, not just ROI.\n\nEach car in my collection has a unique story. The Ferrari 250 GTO represents the pinnacle of 1960s racing technology. The Porsche 911 RS embodies the pure, unfiltered driving experience. The Aston Martin DB5 is a piece of cultural history—the most famous car in cinema.\n\nCollecting is also about preservation. These cars are rolling works of art, and we have a responsibility to maintain them for future generations. That's why I document everything—from restoration processes to driving experiences.\n\nMy advice to new collectors? Buy what moves you. Drive your cars. Share them with other enthusiasts. A car in a museum might be preserved, but a car on the road is alive.",
+    "image": "https://i.pinimg.com/736x/50/57/c7/5057c78aee912d0b23082ead5fe897c9.jpg",
+    "tags": ["Collecting", "Philosophy", "Curation"],
+    "featured": false,
+    "readTime": "7 min read"
+  },
+  {
+    "id": 5,
+    "title": "Goodwood Revival: A Step Back in Time",
+    "date": "2024-04-20",
+    "author": "The Collector",
+    "category": "Events",
+    "excerpt": "Experiencing the magic of historic racing at the Goodwood Revival.",
+    "content": "The Goodwood Revival is unlike any other motorsport event. For three days, the Goodwood circuit transforms into a time capsule, transporting visitors back to the golden era of racing.\n\nThe attention to detail is extraordinary. Everyone dresses in period-appropriate attire, from tweed jackets to 1960s racing overalls. The atmosphere is electric—a celebration of everything that makes motorsport great.\n\nRacing at Goodwood is intensely competitive but conducted with a spirit of camaraderie that's rare in modern sport. Watching historic cars being driven flat-out, their engines screaming in anger, is a visceral experience that video can never capture.\n\nI had the privilege of driving my 1962 Ferrari 250 GTO on the circuit. The car felt alive, its chassis communicating every nuance of the track surface. The sound of the V12 at full chat, echoing off the grandstands, brought a smile that lasted for days.\n\nEvents like Goodwood remind us why we fell in love with cars in the first place. It's not about stats or lap times it's about the passion, the history, and the pure joy of driving.",
+    "image": "https://i.pinimg.com/1200x/d7/73/69/d773698ae3c4e943469a5999ba2dad1a.jpg",
+    "tags": ["Events", "Goodwood", "Historic Racing", "UK"],
+    "featured": false,
+    "readTime": "6 min read"
+  }
+]

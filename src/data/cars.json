@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1,
+    "make": "Ferrari",
+    "model": "250 GTO",
+    "year": 1962,
+    "hp": 300,
+    "zeroToSixty": 5.8,
+    "mileage": 12450,
+    "country": "Italy",
+    "drivetrain": "RWD",
+    "color": "#8b1a1a",
+    "colorName": "Rosso Corsa",
+    "engine": "3.0L V12",
+    "transmission": "5-speed manual",
+    "price": "70,000,000",
+    "description": "One of the most iconic and valuable Ferrari models ever produced.",
+    "images": {
+      "main": "https://i.pinimg.com/1200x/29/5e/1b/295e1b7dea13dc3c633d44562bfeb792.jpg",
+      "gallery": [
+        "/images/gallery/ferrari-250-gto-1.jpg",
+        "/images/gallery/ferrari-250-gto-2.jpg",
+        "/images/gallery/ferrari-250-gto-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": 2,
+    "make": "Porsche",
+    "model": "911 Carrera RS 2.7",
+    "year": 1973,
+    "hp": 210,
+    "zeroToSixty": 5.8,
+    "mileage": 8900,
+    "country": "Germany",
+    "drivetrain": "RWD",
+    "color": "#c9a84c",
+    "colorName": "Signal Yellow",
+    "engine": "2.7L Flat-6",
+    "transmission": "5-speed manual",
+    "price": "1,200,000",
+    "description": "The ultimate 911 from the golden era of Porsche.",
+    "images": {
+      "main": "https://i.pinimg.com/736x/33/68/71/3368716c08028dc5308d8b2983ccff1d.jpg",
+      "gallery": [
+        "/images/gallery/porsche-911-rs-1.jpg",
+        "/images/gallery/porsche-911-rs-2.jpg",
+        "/images/gallery/porsche-911-rs-3.jpg"
+      ]
+    },
+    "featured": true
+  },
+  {
+    "id": 3,
+    "make": "Aston Martin",
+    "model": "DB5",
+    "year": 1964,
+    "hp": 282,
+    "zeroToSixty": 7.1,
+    "mileage": 15600,
+    "country": "England",
+    "drivetrain": "RWD",
+    "color": "#1a3a5c",
+    "colorName": "Silver Birch",
+    "engine": "4.0L Straight-6",
+    "transmission": "5-speed manual",
+    "price": "1,500,000",
+    "description": "The quintessential British grand tourer, famous for its Bond connection.",
+    "images": {
+      "main": "https://i.pinimg.com/736x/08/c3/d8/08c3d8c82ece86e20753983176a6c04b.jpg",
+      "gallery": [
+        "/images/gallery/aston-db5-1.jpg",
+        "/images/gallery/aston-db5-2.jpg",
+        "/images/gallery/aston-db5-3.jpg"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "id": 4,
+    "make": "Mercedes-Benz",
+    "model": "300SL Gullwing",
+    "year": 1955,
+    "hp": 215,
+    "zeroToSixty": 8.8,
+    "mileage": 9800,
+    "country": "Germany",
+    "drivetrain": "RWD",
+    "color": "#a8a8a8",
+    "colorName": "Silver Grey",
+    "engine": "3.0L Straight-6",
+    "transmission": "4-speed manual",
+    "price": "2,000,000",
+    "description": "The legendary Gullwing with iconic upward-opening doors.",
+    "images": {
+      "main": "https://i.pinimg.com/736x/6b/ea/8d/6bea8de7151f26092797c7b1a3cbef3f.jpg",
+      "gallery": [
+        "/images/gallery/mercedes-300sl-1.jpg",
+        "/images/gallery/mercedes-300sl-2.jpg",
+        "/images/gallery/mercedes-300sl-3.jpg"
+      ]
+    },
+    "featured": false
+  },
+  {
+    "id": 5,
+    "make": "Lamborghini",
+    "model": "Miura P400",
+    "year": 1968,
+    "hp": 350,
+    "zeroToSixty": 6.7,
+    "mileage": 11200,
+    "country": "Italy",
+    "drivetrain": "RWD",
+    "color": "#c9a84c",
+    "colorName": "Giallo Fly",
+    "engine": "3.9L V12",
+    "transmission": "5-speed manual",
+    "price": "1,800,000",
+    "description": "The car that started the supercar revolution with its mid-engine design.",
+    "images": {
+      "main": "https://i.pinimg.com/736x/a5/98/b2/a598b24c958d1722ff1a8f375ad09aae.jpg",
+      "gallery": [
+        "/images/gallery/lamborghini-miura-1.jpg",
+        "/images/gallery/lamborghini-miura-2.jpg",
+        "/images/gallery/lamborghini-miura-3.jpg"
+      ]
+    },
+    "featured": false
+  }
+]

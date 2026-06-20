@@ -1,0 +1,116 @@
+.private-notes-page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.private-notes-header {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  background: linear-gradient(to bottom, var(--color-background), var(--color-primary));
+}
+
+.private-notes-header .section-title {
+  margin-bottom: var(--space-sm);
+}
+
+.private-notes-header .section-subtitle {
+  margin-bottom: 0;
+}
+
+.private-notes-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+.notes-summary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.summary-card {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.summary-label {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #606060;
+  margin-bottom: 0.5rem;
+}
+
+.summary-value {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--color-accent-gold);
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.note-item {
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 4px;
+  border-left: 3px solid var(--color-accent-gold);
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.note-date {
+  font-size: 0.85rem;
+  color: #808080;
+}
+
+.note-category {
+  padding: 0.2rem 0.8rem;
+  background: var(--color-primary);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-accent-gold);
+  border-radius: 2px;
+}
+
+.note-item h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.note-content {
+  color: #a0a0a0;
+  font-weight: 300;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.note-cost {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 0.9rem;
+  color: var(--color-accent-gold);
+}
+
+@media (max-width: 480px) {
+  .notes-summary {
+    grid-template-columns: 1fr;
+  }
+}

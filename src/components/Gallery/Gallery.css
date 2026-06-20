@@ -1,0 +1,17 @@
+.gallery {
+  margin-top: 24px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.gallery__item {
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background: #f3f4f6;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+

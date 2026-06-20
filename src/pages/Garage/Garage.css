@@ -1,0 +1,18 @@
+.garage-page {
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+.garage-header {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  background: linear-gradient(to bottom, var(--color-background), var(--color-primary));
+}
+
+.garage-header .section-title {
+  margin-bottom: var(--space-sm);
+}
+
+.garage-header .section-subtitle {
+  margin-bottom: 0;
+}

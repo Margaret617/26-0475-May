@@ -1,0 +1,42 @@
+[
+  {
+    "carId": 1,
+    "events": [
+      {
+        "date": "2022-03-15",
+        "title": "Acquisition",
+        "description": "Purchased at RM Sotheby's auction in Arizona."
+      },
+      {
+        "date": "2022-06-20",
+        "title": "Full Restoration Begins",
+        "description": "Started comprehensive nut-and-bolt restoration."
+      },
+      {
+        "date": "2023-01-10",
+        "title": "Restoration Complete",
+        "description": "Engine rebuilt, new paint, fully restored to concours condition."
+      },
+      {
+        "date": "2023-08-15",
+        "title": "Pebble Beach Concours d'Elegance",
+        "description": "Awarded Best in Class - Ferrari"
+      }
+    ]
+  },
+  {
+    "carId": 2,
+    "events": [
+      {
+        "date": "2023-05-01",
+        "title": "Acquisition",
+        "description": "Private sale from a collector in Germany."
+      },
+      {
+        "date": "2023-08-20",
+        "title": "Mechanical Restoration",
+        "description": "Engine and transmission rebuilt to factory specifications."
+      }
+    ]
+  }
+]

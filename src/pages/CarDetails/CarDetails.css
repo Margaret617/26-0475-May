@@ -1,0 +1,87 @@
+.car-details {
+  background: #0b0b0b;
+  color: #d4d4d4;
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 70vh;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
+}
+
+.overlay h1 {
+  font-size: 50px;
+  color: #c9b37e;
+  letter-spacing: 4px;
+}
+
+/* SECTIONS */
+.section {
+  padding: 60px;
+}
+
+.section h2 {
+  color: #c9b37e;
+  margin-bottom: 20px;
+}
+
+/* SPECS */
+.specs p {
+  margin: 10px 0;
+}
+
+.specs span {
+  color: white;
+}
+
+/* STORY */
+.story {
+  max-width: 700px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* TIMELINE */
+.timeline {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline li {
+  padding: 10px 0;
+  border-left: 2px solid #c9b37e;
+  padding-left: 15px;
+  margin-left: 10px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
