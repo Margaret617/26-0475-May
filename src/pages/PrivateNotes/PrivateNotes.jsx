@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useMemo } from 'react';
 import notesData from '../../data/notes.json';
 import './PrivateNotes.css';
 
 const PrivateNotes = () => {
-  const [notes] = useState(notesData);
+  const notes = useMemo(() => notesData, []);
+  // ProtectedRoute handles authentication + redirect.
+  // This page focuses only on rendering notes.
 
   return (
     <div className="private-notes-page">

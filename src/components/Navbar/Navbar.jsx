@@ -28,6 +28,7 @@ const Navbar = () => {
     { path: '/contact', label: 'Contact' },
   ];
 
+
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
