@@ -1,10 +1,11 @@
-# TODO - Fix motore app
+# TODO
 
-- [x] Replace placeholder `src/App.jsx` with real app wrapper that renders routes (and optional global layout).
-- [ ] Wire all existing pages into `src/routes/AppRoutes.jsx`.
-- [ ] Implement real auth logic in `src/components/ProtectedRoute/ProtectedRoute.jsx` (use localStorage token/flag; redirect to /login).
-- [ ] Ensure `src/pages/Login/Login.jsx` sets auth state (token/flag) on submit and redirects to /private-notes.
-- [ ] Add missing routes for Notes/PrivateNotes/BlogPost/Contact if components expect them.
-- [ ] Ensure build succeeds (`npm run build`).
-- [ ] Re-run tests (`npm test`).
+## PrivateNotes vs Login separation
+- [x] Reviewed routing and existing pages.
+- [x] Update `src/pages/Login/Login.jsx` UI text so `/login` is clearly the login page (not “Private Notes”).
+- [ ] Run app / verify flows:
+
+  - unauthenticated `/private-notes` redirects to `/login`
+  - `/login` shows login UI
+  - correct password redirects to `/private-notes`
 

@@ -33,21 +33,49 @@
   margin-bottom: 2rem;
 }
 
-.login-form-group {
-  margin-bottom: 1rem;
+.login-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-.login-form-group input {
+.login-form-group {
+  margin-bottom: 0;
+}
+
+.login-form-group input,
+.login-form-group select {
   width: 100%;
   padding: 0.8rem 1rem;
   background: var(--color-primary);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   color: #ffffff;
   font-family: var(--font-sans);
   font-size: 1rem;
   transition: all 0.3s var(--transition-smooth);
   border-radius: 2px;
 }
+
+.login-form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Light-mode overrides */
+:root[data-theme='light'] .login-form-group input,
+:root[data-theme='light'] .login-form-group select {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #111827;
+  background: #ffffff;
+}
+
+:root[data-theme='light'] .login-form-group input::placeholder {
+  color: rgba(17, 24, 39, 0.55);
+}
+
+:root[data-theme='light'] .login-box {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
 
 .login-form-group input:focus {
   outline: none;
