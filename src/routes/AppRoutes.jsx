@@ -9,9 +9,11 @@ import BlogPost from '../pages/BlogPost/BlogPost';
 import Login from '../pages/Login/Login';
 
 import Contact from '../pages/Contact/Contact';
-import ProtectedRoute from '../components/ProtectedRoute/ProtectedRoute';
+
+
 
 import Navbar from '../components/Navbar/Navbar';
+
 import Footer from '../components/Footer/Footer';
 import WelcomePopup from '../components/WelcomePopup/WelcomePopup';
 
