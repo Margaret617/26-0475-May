@@ -6,7 +6,7 @@
 .private-notes-header {
   text-align: center;
   padding: var(--space-xl) var(--space-md) var(--space-lg);
-  background: linear-gradient(to bottom, var(--color-background), var(--color-primary));
+  background: linear-gradient(to bottom, var(--color-background), var(--color-surface));
 }
 
 .private-notes-header .section-title {
@@ -15,6 +15,7 @@
 
 .private-notes-header .section-subtitle {
   margin-bottom: 0;
+  color: var(--color-secondary);
 }
 
 .private-notes-content {
@@ -35,7 +36,7 @@
   padding: 1.5rem;
   text-align: center;
   border-radius: 4px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .summary-label {
@@ -43,7 +44,7 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #606060;
+  color: var(--color-secondary);
   margin-bottom: 0.5rem;
 }
 
@@ -75,7 +76,7 @@
 
 .note-date {
   font-size: 0.85rem;
-  color: #808080;
+  color: var(--color-secondary);
 }
 
 .note-category {
@@ -95,7 +96,7 @@
 }
 
 .note-content {
-  color: #a0a0a0;
+  color: var(--color-secondary);
   font-weight: 300;
   line-height: 1.6;
   white-space: pre-wrap;
@@ -104,7 +105,7 @@
 .note-cost {
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
   font-size: 0.9rem;
   color: var(--color-accent-gold);
 }
@@ -129,7 +130,7 @@
   width: 100%;
   max-width: 520px;
   background: var(--color-surface);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(128, 128, 128, 0.2);
   border-radius: 8px;
   padding: 2rem;
   text-align: center;
@@ -141,7 +142,7 @@
 
 .private-notes-login-box p {
   margin-bottom: 1.5rem;
-  color: #a0a0a0;
+  color: var(--color-secondary);
 }
 
 .private-notes-login-box .login-form-group {
@@ -152,14 +153,14 @@
   width: 100%;
   padding: 0.85rem 1rem;
   border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: transparent;
-  color: #fff;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  background: var(--color-surface);
+  color: var(--color-primary);
   outline: none;
 }
 
 .private-notes-login-box input::placeholder {
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--color-secondary);
 }
 
 .login-error {

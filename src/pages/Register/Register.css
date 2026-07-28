@@ -1,0 +1,128 @@
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-background);
+  padding: 100px 20px 40px;
+}
+
+.register-container {
+  width: 100%;
+  max-width: 650px;
+}
+
+.register-box {
+  background: var(--color-surface);
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid var(--color-accent-silver);
+}
+
+.register-box h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: var(--color-primary);
+}
+
+.register-box p {
+  text-align: center;
+  color: var(--color-secondary);
+  margin-bottom: 30px;
+}
+
+.register-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.register-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form-group input,
+.register-form-group select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+  background: var(--color-background);
+  color: var(--color-primary);
+}
+
+.register-form-group input::placeholder {
+  color: var(--color-secondary);
+}
+
+.register-form-group input:focus,
+.register-form-group select:focus {
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 0 10px rgba(168, 130, 45, 0.2);
+}
+
+.register-btn {
+  width: 100%;
+  padding: 15px;
+  margin-top: 25px;
+  border: none;
+  border-radius: 8px;
+  background: var(--color-accent-gold);
+  color: #0a0a0a;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #b8963e;
+}
+
+.register-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.register-error {
+  color: #cc3333;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-success {
+  color: #22c55e;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.register-link {
+  margin-top: 25px;
+  text-align: center;
+  color: var(--color-secondary);
+}
+
+.register-link a {
+  color: var(--color-accent-gold);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .register-box {
+    padding: 25px;
+  }
+}
+

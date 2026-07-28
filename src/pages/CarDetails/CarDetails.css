@@ -1,57 +1,70 @@
 .car-details {
-  background: #0b0b0b;
-  color: #d4d4d4;
+  background: var(--color-background);
+  color: var(--color-primary);
   min-height: 100vh;
+  padding-top: 80px;
 }
 
 /* HERO */
-.hero {
+.car-details .hero {
   position: relative;
   height: 70vh;
+  min-height: 400px;
 }
 
-.hero img {
+.car-details .hero img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.overlay {
+.car-details .overlay {
   position: absolute;
   bottom: 30px;
   left: 50px;
 }
 
-.overlay h1 {
+.car-details .overlay h1 {
   font-size: 50px;
-  color: #c9b37e;
+  color: #ffffff;
   letter-spacing: 4px;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+}
+
+.car-details .overlay p {
+  color: #c0c0c0;
+  font-size: 1rem;
 }
 
 /* SECTIONS */
-.section {
+.car-details .section {
   padding: 60px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.section h2 {
-  color: #c9b37e;
+.car-details .section h2 {
+  color: var(--color-accent-gold);
   margin-bottom: 20px;
+  font-family: var(--font-serif);
 }
 
 /* SPECS */
 .specs p {
   margin: 10px 0;
+  color: var(--color-secondary);
 }
 
 .specs span {
-  color: white;
+  color: var(--color-primary);
+  font-weight: 500;
 }
 
 /* STORY */
 .story {
   max-width: 700px;
   line-height: 1.6;
-  opacity: 0.85;
+  color: var(--color-secondary);
 }
 
 /* TIMELINE */
@@ -62,9 +75,10 @@
 
 .timeline li {
   padding: 10px 0;
-  border-left: 2px solid #c9b37e;
+  border-left: 2px solid var(--color-accent-gold);
   padding-left: 15px;
   margin-left: 10px;
+  color: var(--color-secondary);
 }
 
 .gallery {
@@ -85,3 +99,24 @@
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+
+@media (max-width: 768px) {
+  .car-details .hero {
+    height: 50vh;
+    min-height: 300px;
+  }
+  
+  .car-details .overlay {
+    left: 20px;
+    bottom: 20px;
+  }
+  
+  .car-details .overlay h1 {
+    font-size: 2rem;
+  }
+  
+  .car-details .section {
+    padding: 30px 20px;
+  }
+}
+

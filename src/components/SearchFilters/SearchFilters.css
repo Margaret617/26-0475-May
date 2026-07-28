@@ -21,7 +21,7 @@
 }
 
 .search-icon {
-  color: #606060;
+  color: var(--color-secondary);
   font-size: 1rem;
 }
 
@@ -30,14 +30,14 @@
   background: transparent;
   border: none;
   outline: none;
-  color: #ffffff;
+  color: var(--color-primary);
   font-family: var(--font-sans);
   font-size: 0.95rem;
   padding: 0.5rem 0;
 }
 
 .search-input::placeholder {
-  color: #606060;
+  color: var(--color-secondary);
 }
 
 .filter-toggle {
@@ -46,7 +46,7 @@
   gap: 0.5rem;
   background: transparent;
   border: none;
-  color: #a0a0a0;
+  color: var(--color-secondary);
   font-family: var(--font-sans);
   font-size: 0.85rem;
   padding: 0.5rem 1rem;
@@ -56,7 +56,7 @@
 }
 
 .filter-toggle:hover {
-  color: #ffffff;
+  color: var(--color-primary);
 }
 
 .filter-badge {
@@ -103,13 +103,13 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #808080;
+  color: var(--color-secondary);
 }
 
 .filter-group select {
-  background: var(--color-primary);
+  background: var(--color-surface);
   border: 1px solid rgba(204, 0, 0, 0.1);
-  color: #ffffff;
+  color: var(--color-primary);
   padding: 0.6rem 0.8rem;
   border-radius: 2px;
   font-family: var(--font-sans);
@@ -125,7 +125,7 @@
 }
 
 .filter-group select option {
-  background: var(--color-primary);
+  background: var(--color-surface);
 }
 
 .clear-filters {
@@ -133,7 +133,7 @@
   padding: 0.6rem 1.5rem;
   background: transparent;
   border: 1px solid rgba(204, 0, 0, 0.2);
-  color: #a0a0a0;
+  color: var(--color-secondary);
   font-family: var(--font-sans);
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -143,7 +143,7 @@
 
 .clear-filters:hover {
   border-color: var(--color-accent-red-light);
-  color: #ffffff;
+  color: var(--color-primary);
 }
 
 @media (max-width: 768px) {

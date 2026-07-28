@@ -88,7 +88,7 @@
   font-family: var(--font-sans);
   font-weight: 300;
   font-size: clamp(1rem, 1.5vw, 1.3rem);
-  color: #c0c0c0;
+  color: var(--color-secondary);
   max-width: 600px;
   margin: 0 auto 2.5rem;
   line-height: 1.8;
@@ -130,8 +130,8 @@
 
 .btn-secondary {
   background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-primary);
+  border-color: var(--color-secondary);
 }
 
 .btn-secondary:hover {
@@ -149,7 +149,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--color-secondary);
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -185,7 +185,7 @@
 .indicator {
   width: 2px;
   height: 20px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(128, 128, 128, 0.3);
   border: none;
   transition: all 0.3s var(--transition-smooth);
   cursor: pointer;
@@ -198,7 +198,7 @@
 }
 
 .indicator:hover {
-  background: rgba(255, 255, 255, 0.6);
+  background: var(--color-secondary);
 }
 
 @media (max-width: 768px) {
@@ -228,3 +228,4 @@
     font-size: 3.5rem;
   }
 }
+

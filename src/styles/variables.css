@@ -1,7 +1,12 @@
+/* =========================
+   BASE THEME (DARK DEFAULT)
+========================= */
 :root {
+  color-scheme: dark;
+
   /* Primary Colors - Red & Black Theme */
-  --color-primary: #1a0a0a;
-  --color-secondary: #2d1515;
+  --color-primary: #d4d4d4;
+  --color-secondary: #a0a0a0;
   --color-surface: #1f0f0f;
   --color-background: #0a0505;
   
@@ -27,4 +32,23 @@
   /* Transitions */
   --transition-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-duration: 0.3s;
+}
+
+/* =========================
+   LIGHT THEME OVERRIDES
+========================= */
+html[data-theme='light'] {
+  color-scheme: light;
+
+  --color-primary: #2b0f0f;
+  --color-secondary: #6b6b6b;
+  --color-surface: #ffffff;
+  --color-background: #f7f3f3;
+
+  --color-accent-red: #b30000;
+  --color-accent-red-light: #e00000;
+  --color-accent-red-dark: #7a0000;
+  --color-accent-red-glow: rgba(224, 0, 0, 0.18);
+  --color-accent-gold: #a8822d;
+  --color-accent-silver: #6c6c6c;
 }

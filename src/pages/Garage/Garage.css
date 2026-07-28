@@ -1,18 +1,33 @@
+/* =========================
+   GARAGE PAGE WRAPPER
+========================= */
 .garage-page {
   padding-top: 80px;
   min-height: 100vh;
+  background: var(--color-background);
+  color: var(--color-primary);
 }
 
+/* =========================
+   HEADER
+========================= */
 .garage-header {
   text-align: center;
   padding: var(--space-xl) var(--space-md) var(--space-lg);
-  background: linear-gradient(to bottom, var(--color-background), var(--color-primary));
+  background: linear-gradient(
+    to bottom,
+    var(--color-background),
+    var(--color-surface)
+  );
 }
 
 .garage-header .section-title {
   margin-bottom: var(--space-sm);
+  color: var(--color-primary);
 }
 
 .garage-header .section-subtitle {
   margin-bottom: 0;
+  color: var(--color-secondary);
 }
+

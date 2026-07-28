@@ -1,9 +1,16 @@
+/* =========================
+   FOOTER
+========================= */
 .footer {
-  background: var(--color-primary);
+  background: var(--color-surface);
   padding: 3rem 0 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-accent-silver);
+  color: var(--color-primary);
 }
 
+/* =========================
+   FOOTER CONTENT LAYOUT
+========================= */
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,51 +20,76 @@
   gap: 3rem;
 }
 
+/* =========================
+   FOOTER HEADINGS
+========================= */
 .footer-section h4,
 .footer-section h5 {
   margin-bottom: 1rem;
+  color: var(--color-primary);
 }
 
+/* =========================
+   LOGO
+========================= */
 .footer-logo {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   letter-spacing: 0.1em;
+  color: var(--color-primary);
 }
 
+/* =========================
+   DESCRIPTION
+========================= */
 .footer-description {
-  color: #808080;
+  color: var(--color-secondary);
   font-weight: 300;
   line-height: 1.6;
 }
 
+/* =========================
+   LISTS
+========================= */
 .footer-section ul {
   list-style: none;
+  padding: 0;
 }
 
 .footer-section ul li {
   margin-bottom: 0.5rem;
 }
 
+/* =========================
+   LINKS
+========================= */
 .footer-section ul li a {
-  color: #a0a0a0;
+  color: var(--color-secondary);
   font-weight: 300;
-  transition: all 0.3s var(--transition-smooth);
+  transition: all var(--transition-smooth);
+  text-decoration: none;
 }
 
 .footer-section ul li a:hover {
   color: var(--color-accent-gold);
 }
 
+/* =========================
+   FOOTER BOTTOM
+========================= */
 .footer-bottom {
   max-width: 1200px;
   margin: 2rem auto 0;
   padding: 1.5rem var(--space-md) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-top: 1px solid var(--color-accent-silver);
   text-align: center;
-  color: #606060;
+  color: var(--color-secondary);
   font-size: 0.85rem;
 }
 
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr 1fr;
@@ -71,3 +103,4 @@
     gap: 1.5rem;
   }
 }
+
