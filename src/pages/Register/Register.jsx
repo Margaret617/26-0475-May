@@ -1,70 +1,136 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import { supabase } from "../../supabase";
 import "./Register.css";
 
 const Register = () => {
   const navigate = useNavigate();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [gender, setGender] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    gender: "",
+    username: "",
+    password: "",
+    confirmPassword: ""
+  });
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     setError("");
     setSuccess("");
+    setLoading(true);
 
+    const { 
+      firstName, lastName, email, phone, gender, 
+      username, password, confirmPassword 
+    } = formData;
+
+    // Validation
     if (password !== confirmPassword) {
       setError("Passwords do not match.");
+      setLoading(false);
       return;
     }
 
     if (password.length < 6) {
       setError("Password must be at least 6 characters.");
+      setLoading(false);
       return;
     }
 
-    setLoading(true);
-
     try {
-      const response = await fetch("http://localhost/testphp/api/register.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      console.log("Attempting to register user...");
+
+      // Step 1: Sign up with Supabase Auth
+      const { data: authData, error: authError } = await supabase.auth.signUp({
+        email: email,
+        password: password,
+        options: {
+          data: {
+            username: username,
+            first_name: firstName,
+            last_name: lastName,
+            phone: phone,
+            gender: gender,
+          },
         },
-        body: JSON.stringify({
-          username: username,
-          email: email,
-          password: password,
-          first_name: firstName,
-          last_name: lastName,
-          phone: phone,
-          gender: gender,
-        }),
       });
 
-      const data = await response.json();
-
-      if (data.success) {
-        setSuccess("Account created successfully! Redirecting to login...");
-        setTimeout(() => {
-          navigate("/login");
-        }, 2000);
-      } else {
-        setError(data.message || "Registration failed");
+      if (authError) {
+        console.error("Auth error:", authError);
+        setError(authError.message || "Registration failed");
+        setLoading(false);
+        return;
       }
+
+      if (!authData?.user) {
+        setError("No user data returned. Please try again.");
+        setLoading(false);
+        return;
+      }
+
+      console.log("User created successfully:", authData.user.id);
+
+      // Step 2: Insert profile into profiles table
+      const { error: profileError } = await supabase
+        .from("profiles")
+        .insert([
+          {
+            id: authData.user.id,
+            username: username,
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            phone: phone,
+            gender: gender,
+          },
+        ]);
+
+      if (profileError) {
+        console.error("Profile insert error:", profileError);
+        
+        let errorMessage = "Profile save failed: ";
+        
+        if (profileError.code === "42P01") {
+          errorMessage += "The 'profiles' table does not exist. Please create it in Supabase.";
+        } else if (profileError.code === "42501") {
+          errorMessage += "Row-level security is blocking profile creation. Please add an INSERT policy for the 'profiles' table.";
+        } else if (profileError.code === "23505") {
+          errorMessage += "Username or email already exists. Please use different values.";
+        } else {
+          errorMessage += profileError.message || "Unknown error occurred.";
+        }
+        
+        setError(errorMessage);
+        setLoading(false);
+        return;
+      }
+
+      console.log("Profile created successfully!");
+      setSuccess("Account created successfully! Redirecting...");
+      
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
+
     } catch (err) {
-      setError("Network error. Please try again.");
+      console.error("Registration error:", err);
+      setError("Network error. Please check your connection and try again.");
     }
 
     setLoading(false);
@@ -82,9 +148,10 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="text"
+                  name="username"
                   placeholder="Username"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={formData.username}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -92,9 +159,10 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="text"
+                  name="firstName"
                   placeholder="First Name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={formData.firstName}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -102,9 +170,10 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="text"
+                  name="lastName"
                   placeholder="Last Name"
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
+                  value={formData.lastName}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -112,9 +181,10 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="email"
+                  name="email"
                   placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -122,17 +192,19 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="tel"
+                  name="phone"
                   placeholder="Phone Number"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
+                  value={formData.phone}
+                  onChange={handleChange}
                   required
                 />
               </div>
 
               <div className="register-form-group">
                 <select
-                  value={gender}
-                  onChange={(e) => setGender(e.target.value)}
+                  name="gender"
+                  value={formData.gender}
+                  onChange={handleChange}
                   required
                 >
                   <option value="">Select Gender</option>
@@ -145,9 +217,10 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="password"
+                  name="password"
                   placeholder="Password (min 6 characters)"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -155,9 +228,10 @@ const Register = () => {
               <div className="register-form-group">
                 <input
                   type="password"
+                  name="confirmPassword"
                   placeholder="Confirm Password"
-                  value={confirmPassword}
-                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  value={formData.confirmPassword}
+                  onChange={handleChange}
                   required
                 />
               </div>

@@ -1,31 +1,21 @@
-# Light/Dark Mode Fix - COMPLETED
+# Supabase Auth Migration
 
-## Phase 1: Foundation (Root Variables)
-- [x] Fix `src/styles/variables.css` - Consolidate ALL theme variables (both dark and light)
-- [x] Fix `src/styles/theme.css` - Remove duplicate :root, keep only necessary overrides
-- [x] Fix `src/styles/globals.css` - Replace hardcoded colors with CSS variables
+## Task: Fix login details not being saved to Supabase
 
-## Phase 2: Remove Duplicate :root declarations
-- [x] Fix `Footer.css` - Remove duplicate :root and html[data-theme='light']
-- [x] Fix `Garage.css` - Remove duplicate :root and html[data-theme='light']
-- [x] Fix `Contact.css` - Remove duplicate :root and html[data-theme='light']
-- [x] Fix `Profile.css` - Remove duplicate :root and html[data-theme='light']
-- [x] Fix `PrivateNotes.css` - Remove duplicate :root and html[data-theme='light']
-- [x] Fix `Login.css` - Fix selector and remove duplicate :root
+### Root Cause
+`Register.jsx` silently swallowed the `profiles` table insert error, so users saw "success" even when their profile data was never saved to Supabase.
 
-## Phase 3: Fix hardcoded colors in components
-- [x] Fix `Navbar.css` - Replace hardcoded dark backgrounds with CSS variables
-- [x] Fix `Hero.css` - Replace hardcoded gradient overlays
-- [x] Fix `CarCard.css` - Replace hardcoded text colors (#ffffff, #a0a0a0, etc.)
-- [x] Fix `CarDetails.css` - Complete rewrite with CSS variables
-- [x] Fix `SearchFilters.css` - Replace hardcoded colors
-- [x] Fix `WelcomePopup.css` - Replace hardcoded dark colors
-- [x] Fix `Blog.css` (BlogCard styles) - Replace hardcoded text colors
-- [x] Fix `BlogPost.css` - Replace hardcoded overlay colors
-- [x] Fix `Register.css` - Complete rewrite with theme variables
-- [x] Fix `PrivateNotes.css` - Replace remaining hardcoded colors
-- [x] Fix `GarageGrid.css` - Replace hardcoded #808080 colors
+### Plan Steps
+- [x] Analyze Register.jsx signup + profile insert flow
+- [x] Surface profile insert errors to the user instead of ignoring them
+- [x] Only show success when both auth signup AND profile insert succeed
+- [x] Provide clear guidance in the UI if the `profiles` table / RLS is misconfigured
+- [x] Verify Login.jsx uses signInWithPassword correctly (already does)
+- [ ] Test: register a new account, confirm profile appears in `profiles` table
 
 ## Verification
-- [x] Build compiles successfully (no errors)
+- [x] Build compiles successfully
+- [ ] Login flow works and shows user name in Profile
+- [ ] Register flow creates account AND profile row in Supabase
+- [ ] Profile errors are visible in the UI when they occur
 

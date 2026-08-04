@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { supabase } from "../../supabase";
 
 const ProtectedRoute = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(undefined);
@@ -8,28 +9,10 @@ const ProtectedRoute = ({ children }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        // Check if user is logged in via localStorage
-        const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
-        const userId = localStorage.getItem("user_id");
+        const { data: { session } } = await supabase.auth.getSession();
         
-        if (isLoggedIn && userId) {
-          // Verify with backend
-          const response = await fetch("http://localhost/testphp/api/verify.php", {
-            method: "GET",
-            credentials: "include", // Important for session cookies
-          });
-          
-          const data = await response.json();
-          
-          if (data.success) {
-            setIsAuthenticated(true);
-          } else {
-            // Clear invalid session
-            localStorage.removeItem("isLoggedIn");
-            localStorage.removeItem("user_id");
-            localStorage.removeItem("username");
-            setIsAuthenticated(false);
-          }
+        if (session) {
+          setIsAuthenticated(true);
         } else {
           setIsAuthenticated(false);
         }

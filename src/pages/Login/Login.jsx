@@ -1,14 +1,25 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import { supabase } from "../../supabase";
 import "./Login.css";
 
 const Login = () => {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: ""
+  });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,28 +27,17 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost/testphp/api/login.php", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          username: email,
-          password: password,
-        }),
+      const { data, error: authError } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password,
       });
 
-      const data = await response.json();
-
-      if (data.success) {
-        // Store user data in localStorage or context
-        localStorage.setItem("user_id", data.user_id);
-        localStorage.setItem("username", data.username);
-        localStorage.setItem("isLoggedIn", "true");
-        
+      if (authError) {
+        setError(authError.message || "Login failed");
+      } else if (data?.session) {
         navigate("/");
       } else {
-        setError(data.message || "Login failed");
+        setError("Login failed. Please try again.");
       }
     } catch (err) {
       setError("Network error. Please try again.");
@@ -57,10 +57,11 @@ const Login = () => {
             <div className="login-grid">
               <div className="login-form-group">
                 <input
-                  type="text"
-                  placeholder="Username or Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={formData.email}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -68,9 +69,10 @@ const Login = () => {
               <div className="login-form-group">
                 <input
                   type="password"
+                  name="password"
                   placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  value={formData.password}
+                  onChange={handleChange}
                   required
                 />
               </div>
@@ -88,7 +90,7 @@ const Login = () => {
           </form>
 
           <p className="login-link">
-            Don't have an account? <a href="/register">Register</a>
+            Don't have an account? <Link to="/register">Register</Link>
           </p>
         </div>
       </div>
