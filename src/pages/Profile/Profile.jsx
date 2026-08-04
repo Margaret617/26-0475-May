@@ -39,7 +39,7 @@ const Profile = () => {
 
   useEffect(() => {
     getProfile();
-  }, [getProfile]);
+  }, [getProfile]); // This is correct, but ESLint might still complain
 
   const logout = async () => {
     await supabase.auth.signOut();
@@ -57,8 +57,7 @@ const Profile = () => {
   return (
     <div className="profile-page">
       <div className="profile-card">
-
-          <h1>My Profile</h1>
+        <h1>My Profile</h1>
 
         {user && (
           <p className="profile-email">
@@ -68,23 +67,15 @@ const Profile = () => {
 
         <div className="profile-info">
           <p><strong>First Name:</strong> {profile.first_name}</p>
-
           <p><strong>Last Name:</strong> {profile.last_name}</p>
-
           <p><strong>Email:</strong> {profile.email}</p>
-
           <p><strong>Phone:</strong> {profile.phone}</p>
-
           <p><strong>Gender:</strong> {profile.gender}</p>
         </div>
 
-        <button
-          className="logout-btn"
-          onClick={logout}
-        >
+        <button className="logout-btn" onClick={logout}>
           Logout
         </button>
-
       </div>
     </div>
   );
