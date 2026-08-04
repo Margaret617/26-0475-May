@@ -1,21 +1,18 @@
-# Supabase Auth Migration
+# Vercel Build Fix
 
-## Task: Fix login details not being saved to Supabase
+## Task: Fix Vercel build failure caused by ESLint warnings treated as errors (CI=true)
 
 ### Root Cause
-`Register.jsx` silently swallowed the `profiles` table insert error, so users saw "success" even when their profile data was never saved to Supabase.
+Vercel runs builds with `CI=true`, so `react-scripts build` treats ESLint warnings as errors and fails to compile. The failing file is `src/pages/Profile/Profile.jsx` with two warnings:
+1. `'user' is assigned a value but never used` (no-unused-vars)
+2. `React Hook useEffect has a missing dependency: 'getProfile'` (react-hooks/exhaustive-deps)
 
 ### Plan Steps
-- [x] Analyze Register.jsx signup + profile insert flow
-- [x] Surface profile insert errors to the user instead of ignoring them
-- [x] Only show success when both auth signup AND profile insert succeed
-- [x] Provide clear guidance in the UI if the `profiles` table / RLS is misconfigured
-- [x] Verify Login.jsx uses signInWithPassword correctly (already does)
-- [ ] Test: register a new account, confirm profile appears in `profiles` table
+- [x] Analyze build failure (reproduced with `CI=true npm run build`)
+- [x] Wrap `getProfile` in `useCallback` and include it in `useEffect` dependencies
+- [x] Use the `user` state in the UI to clear the unused-variable warning
+- [x] Verify with `CI=true npm run build` that it compiles cleanly
 
 ## Verification
-- [x] Build compiles successfully
-- [ ] Login flow works and shows user name in Profile
-- [ ] Register flow creates account AND profile row in Supabase
-- [ ] Profile errors are visible in the UI when they occur
-
+- [x] `CI=true npm run build` succeeds without errors
+- [ ] Vercel deployment builds successfully
