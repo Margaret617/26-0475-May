@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../../supabase";
 import "./Profile.css";
@@ -9,11 +9,7 @@ const Profile = () => {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(null);
 
-  useEffect(() => {
-    getProfile();
-  }, []);
-
-  const getProfile = async () => {
+  const getProfile = useCallback(async () => {
     // Get logged in user
     const {
       data: { user },
@@ -39,7 +35,11 @@ const Profile = () => {
     }
 
     setProfile(data);
-  };
+  }, [navigate]);
+
+  useEffect(() => {
+    getProfile();
+  }, [getProfile]);
 
   const logout = async () => {
     await supabase.auth.signOut();
@@ -58,7 +58,13 @@ const Profile = () => {
     <div className="profile-page">
       <div className="profile-card">
 
-        <h1>My Profile</h1>
+          <h1>My Profile</h1>
+
+        {user && (
+          <p className="profile-email">
+            Signed in as <strong>{user.email}</strong>
+          </p>
+        )}
 
         <div className="profile-info">
           <p><strong>First Name:</strong> {profile.first_name}</p>
